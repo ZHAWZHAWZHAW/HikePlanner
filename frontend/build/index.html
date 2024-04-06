@@ -1,44 +1,128 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" href="./favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		
-		<link rel="modulepreload" href="./_app/immutable/entry/start.MhuHwd1o.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.wUeTfkRq.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.zMJaRgub.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.LdwEzxIk.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.aVnu3b9f.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.IU5AeOT3.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/2.EpqYNhCB.js">
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">  <h1 data-svelte-h="svelte-e3ww2p">MDM Project von Linus Schneeberger: HikePlanner</h1> <p data-svelte-h="svelte-a64301">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> <button>Clicked 0 times</button> <p><strong data-svelte-h="svelte-4z8nqm">Abwärts [m]</strong> <label><input type="number" min="0" max="10000" value="0"> <input type="range" min="0" max="10000" value="0"></label></p> <p><strong data-svelte-h="svelte-12bkxll">Aufwärts [m]</strong> <label><input type="number" min="0" max="10000" value="0"> <input type="range" min="0" max="10000" value="0"></label></p> <p><strong data-svelte-h="svelte-gkflnq">Distanz [m]</strong> <label><input type="number" min="0" max="30000" value="0"> <input type="range" min="0" max="30000" value="0"></label></p> <button data-svelte-h="svelte-7qel70">Predict</button> <p></p> <table><tr><td data-svelte-h="svelte-1qjxbrr">Dauer:</td><td>n.a.</td></tr> <tr><td data-svelte-h="svelte-cb1clj">DIN33466:</td><td>n.a.</td></tr> <tr><td data-svelte-h="svelte-orpm3r">SAC:</td><td>n.a.</td></tr></table> 
-			
-			<script>
-				{
-					__sveltekit_1jpd85b = {
-						base: new URL(".", location).pathname.slice(0, -1)
-					};
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-					const element = document.currentScript.parentElement;
+    <!-- Preload links for SvelteKit or similar frameworks -->
+    <link rel="modulepreload" href="./_app/immutable/entry/start.MhuHwd1o.js">
+    <link rel="modulepreload" href="./_app/immutable/chunks/entry.wUeTfkRq.js">
+    <link rel="modulepreload" href="./_app/immutable/chunks/scheduler.zMJaRgub.js">
+    <link rel="modulepreload" href="./_app/immutable/entry/app.LdwEzxIk.js">
+    <link rel="modulepreload" href="./_app/immutable/chunks/index.aVnu3b9f.js">
+    <link rel="modulepreload" href="./_app/immutable/nodes/0.IU5AeOT3.js">
+    <link rel="modulepreload" href="./_app/immutable/nodes/2.EpqYNhCB.js">
+    
+    <!-- Custom Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-					const data = [null,null];
-
-					Promise.all([
-						import("./_app/immutable/entry/start.MhuHwd1o.js"),
-						import("./_app/immutable/entry/app.LdwEzxIk.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 2],
-							data,
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-	</body>
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 20px;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        a, button {
+            font-weight: 600;
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input[type="number"], input[type="range"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        td, th {
+            padding: 8px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body data-sveltekit-preload-data="hover">
+    <div>
+        <h1>MDM Project von Linus Schneeberger: HikePlanner</h1>
+        <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+        <div class="form-group">
+            <button id="click-me-button"><i class="fas fa-mouse-pointer"></i> Clicked 0 times</button>
+        </div>
+        <div class="form-group">
+            <strong>Abwärts [m]</strong>
+            <label><input type="number" min="0" max="10000" value="0"> <input type="range" min="0" max="10000" value="0"></label>
+        </div>
+        <div class="form-group">
+            <strong>Aufwärts [m]</strong>
+            <label><input type="number" min="0" max="10000" value="0"> <input type="range" min="0" max="10000" value="0"></label>
+        </div>
+        <div class="form-group">
+            <strong>Distanz [m]</strong>
+            <label><input type="number" min="0" max="30000" value="0"> <input type="range" min="0" max="30000" value="0"></label>
+        </div>
+        <button>Predict</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dauer:</th>
+                    <th>DIN33466:</th>
+                    <th>SAC:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>n.a.</td>
+                    <td>n.a.</td>
+                    <td>n.a.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const clickMeButton = document.getElementById('click-me-button');
+            let count = 0;
+            clickMeButton.addEventListener('click', () => {
+                count++;
+                clickMeButton.innerHTML = `<i class="fas fa-mouse-pointer"></i> Clicked ${count} times`;
+            });
+        });
+    </script>
+</body>
 </html>
