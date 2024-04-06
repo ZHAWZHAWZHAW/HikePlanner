@@ -44,3 +44,4 @@ similar dataset https://www.kaggle.com/datasets/roccoli/gpx-hike-tracks
 * Personalized Model
     * For a specific Hikr user
     * z.B. 100 weitere "neue" Daten eines bestimmten Benutzers 
+# HikePlanner
