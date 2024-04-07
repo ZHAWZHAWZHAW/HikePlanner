@@ -4,7 +4,24 @@
         <meta charset="utf-8" />
         <link rel="icon" href="./favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
+
+        <!-- CSS für den Hintergrund und den zentrierten Container -->
+        <style>
+            body {
+                background-color: #ADD8E6; /* Hellblau */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+            }
+            .container {
+                text-align: center;
+                padding: 20px;
+                max-width: 800px; /* Maximale Breite des Containers */
+            }
+        </style>
+
         <link rel="modulepreload" href="./_app/immutable/entry/start.MhuHwd1o.js">
         <link rel="modulepreload" href="./_app/immutable/chunks/entry.wUeTfkRq.js">
         <link rel="modulepreload" href="./_app/immutable/chunks/scheduler.zMJaRgub.js">
@@ -14,7 +31,20 @@
         <link rel="modulepreload" href="./_app/immutable/nodes/2.EpqYNhCB.js">
     </head>
     <body data-sveltekit-preload-data="hover">
-        <div style="display: contents">  <h1 data-svelte-h="svelte-e3ww2p">MDM Project von Linus Schneeberger: HikePlanner</h1> <p data-svelte-h="svelte-a64301">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> <button>Clicked 0 times</button> <p><strong data-svelte-h="svelte-4z8nqm">Abwärts [m]</strong> <label><input type="number" min="0" max="10000" value="0"> <input type="range" min="0" max="10000" value="0"></label></p> <p><strong data-svelte-h="svelte-12bkxll">Aufwärts [m]</strong> <label><input type="number" min="0" max="10000" value="0"> <input type="range" min="0" max="10000" value="0"></label></p> <p><strong data-svelte-h="svelte-gkflnq">Distanz [m]</strong> <label><input type="number" min="0" max="30000" value="0"> <input type="range" min="0" max="30000" value="0"></label></p> <button data-svelte-h="svelte-7qel70">Predict</button> <p></p> <table><tr><td data-svelte-h="svelte-1qjxbrr">Dauer:</td><td>n.a.</td></tr> <tr><td data-svelte-h="svelte-cb1clj">DIN33466:</td><td>n.a.</td></tr> <tr><td data-svelte-h="svelte-orpm3r">SAC:</td><td>n.a.</td></tr></table> 
+        <div class="container" style="display: contents">
+            <h1 data-svelte-h="svelte-e3ww2p">MDM Project von Linus Schneeberger: HikePlanner</h1>
+            <p data-svelte-h="svelte-a64301">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+            <button>Clicked 0 times</button>
+            <p><strong data-svelte-h="svelte-4z8nqm">Abwärts [m]</strong> <label><input type="number" min="0" max="10000" value="0"> <input type="range" min="0" max="10000" value="0"></label></p>
+            <p><strong data-svelte-h="svelte-12bkxll">Aufwärts [m]</strong> <label><input type="number" min="0" max="10000" value="0"> <input type="range" min="0" max="10000" value="0"></label></p>
+            <p><strong data-svelte-h="svelte-gkflnq">Distanz [m]</strong> <label><input type="number" min="0" max="30000" value="0"> <input type="range" min="0" max="30000" value="0"></label></p>
+            <button data-svelte-h="svelte-7qel70">Predict</button>
+            <p></p>
+            <table>
+                <tr><td data-svelte-h="svelte-1qjxbrr">Dauer:</td><td>n.a.</td></tr>
+                <tr><td data-svelte-h="svelte-cb1clj">DIN33466:</td><td>n.a.</td></tr>
+                <tr><td data-svelte-h="svelte-orpm3r">SAC:</td><td>n.a.</td></tr>
+            </table>
             
             <script>
                 {
