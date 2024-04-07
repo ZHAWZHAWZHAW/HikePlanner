@@ -10,15 +10,22 @@
             body {
                 background-color: #ADD8E6; /* Hellblau */
                 display: flex;
-                justify-content: center;
+                flex-direction: column; /* Inhalte vertikal stapeln */
                 align-items: center;
+                justify-content: center;
                 min-height: 100vh;
                 margin: 0;
+                padding: 20px; /* Etwas Abstand zum Rand */
             }
             .container {
+                background-color: #ffffff; /* Weißer Hintergrund für den Container */
+                border-radius: 10px; /* Abgerundete Ecken */
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Etwas Schatten für Tiefe */
                 text-align: center;
                 padding: 20px;
                 max-width: 800px; /* Maximale Breite des Containers */
+                width: 100%; /* Nimmt die volle Breite bis 800px */
+                box-sizing: border-box; /* Padding geht nicht über die Breite hinaus */
             }
         </style>
 
